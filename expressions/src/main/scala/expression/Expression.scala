@@ -8,6 +8,7 @@ trait Expression {
 
   def length: Int = 1
 
+  // TODO Remove mutual dependency from Expression <-> RichExpression.
   def refactor = new RichExpression(this).refactor
 
   def refactorMultiPass = new RichExpression(this).refactorMultiPass
