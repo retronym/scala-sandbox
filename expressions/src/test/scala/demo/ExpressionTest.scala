@@ -29,26 +29,18 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   }
 
   def testSimplifiy : Unit = {
-    checkSimplify("x", 0 +~ "x")
-    checkSimplify("x", "x" +~ 0)
-    checkSimplify("x", "x" *~ 1)
-    checkSimplify("x", 1 *~ "x")
+    (0 +~ "x").simplify must expr_==("x")
+    ("x" +~ 0).simplify must expr_==("x")
+    (0 +~ "x").simplify must expr_==("x")
+    ("x" *~ 1).simplify must expr_==("x")
+    (1 *~ "x").simplify must expr_==("x")
   }
 
-  def testSimplifiy2 : Unit = {
-    checkSimplify("x", (0 +~ 0) +~ "x")
+  def testSimplifiy1 : Unit = {
+    ((0 +~ 0) +~ "x").simplify must expr_==("x")
   }
 
-  def testSimplifiyComplex : Unit = {
-    checkSimplify("x", (0 +~ 0) +~ "x")
-  }
-
-  def testSimplifiy3 : Unit = {
-    // 1. (a + b) - (b + a)
-    // 1.1 (b + a) - (b + a)
-    //  1.1.1 0
-    // 1.2 (a + b) - (a + b)
-    // 1.2.1 0
+  def testRefactorComplex : Unit = {
     val orig = ("a" +~ "b") -~ ("b" +~ "a");
     orig.refactor must contain(("b" +~ "a") -~ ("b" +~ "a"))
     orig.refactor must contain(("b" +~ "a") -~ ("a" +~ "b"))
@@ -69,9 +61,10 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
     val value = ("a" /~ "b") +~ 1
     e1.refactorMultiPass must contain(value)
   }
+}
 
-  def checkSimplify(expected: Expression, original: Expression) {
-    original.simplify must be_==(expected)
+case class expr_==(e: Expression) extends Matcher[Expression] {
+  override def apply(t: =>Expression) = {
+    (e == t, "matched", "expected: " + e.describe)
   }
-
 }
