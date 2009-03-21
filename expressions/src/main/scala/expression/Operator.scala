@@ -24,13 +24,3 @@ case class Multiply() extends Operator("x") with HasIdentity[Double] with Commut
 }
 
 case class Div() extends Operator("/")
-
-object Op {
-  def + = Plus()
-
-  def - = Minus()
-
-  def x = Multiply()
-
-  def / = Div()
-}

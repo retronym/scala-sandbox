@@ -5,7 +5,6 @@ import dsl._
 
 import junit.framework.{Test, Assert, TestCase}
 import junit.framework.Assert._
-import Op._
 import _root_.org.specs.runner._
 import _root_.org.specs.matcher._
 import _root_.org.specs.mock._
@@ -19,13 +18,13 @@ import _root_.org.specs.xml._
 // TODO Figure out how to use Specs directly with IntelliJ, rather than JUnit.
 class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testExpressionOk : Unit = {
-    val op = BinaryOp(Constant(1), Op.+, Constant(0))
+    val op = BinaryOp(Constant(1), Plus(), Constant(0))
     op.describe must be_==("1.0 + 0.0")
   }
 
   def testImplicits : Unit = {
-    val expr = BinaryOp(1, Op.+, "x")
-    expr must be_==(BinaryOp(Constant(1), Op.+, Variable("x")))
+    val expr = BinaryOp(1, Plus(), "x")
+    expr must be_==(BinaryOp(Constant(1), Plus(), Variable("x")))
   }
 
   def testSimplifiy : Unit = {
