@@ -9,15 +9,16 @@ class RichExpression(val e: Expression) {
     choices.head
   }
 
-  def refactorMultiPass = {
-    var r1 = refactor.removeDuplicates
-    var done = false;
-    while (!done) {
-      var r2 = (for (e <- r1; e1 <- e.refactor) yield e1).removeDuplicates
-      done = r2.length == r1.length
-      r1 = r2
+  def refactorMultiPass : List[Expression] = {
+    refactorMultiPass(refactor.removeDuplicates)
+  }
+
+  private def refactorMultiPass(es : List[Expression]) : List[Expression] = {
+    val es2 = (for (e <- es; e1 <- e.refactor) yield e1).removeDuplicates
+    if (es.length == es2.length) {
+      return es2
     }
-    r1
+    refactorMultiPass(es2)
   }
 
   def refactor: List[Expression] = e match {
