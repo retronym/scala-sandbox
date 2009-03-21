@@ -31,17 +31,13 @@ case class Variable(name: String) extends Expression {
 object Expression {
   implicit def fromDouble(value: Double) = Constant(value)
 
-  implicit def fromInt(value: Int): Constant = {
-    Constant(value)
-  }
+  implicit def fromInt(value: Int): Constant = Constant(value)
 
   implicit def fromString(value: String) = Variable(value)
 }
 
 case class BinaryOp(left: Expression, op: Operator, right: Expression) extends Expression {
-  def describe = {
-    left.describe + " " + op.toString + " " + right.describe
-  }
+  def describe = left.describe + " " + op.toString + " " + right.describe
 
   def flip = BinaryOp(right, op, left)
 
