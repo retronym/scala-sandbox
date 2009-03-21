@@ -13,21 +13,12 @@ class ExpressionBuilder(e1: Expression) {
 }
 
 object ExpressionBuilder {
-  implicit def ExpressionToExpressionBuilder(e: Expression): ExpressionBuilder = {
-    new ExpressionBuilder(e)
-  }
+  implicit def ExpressionToExpressionBuilder(e: Expression): ExpressionBuilder = new ExpressionBuilder(e)  
 
-  implicit def ExpressionToExpressionBuilder(e: String): ExpressionBuilder = {
-    new ExpressionBuilder(e)
-  }
+  implicit def ExpressionToExpressionBuilder(e: String): ExpressionBuilder = new ExpressionBuilder(e)
 
-  implicit def ExpressionToExpressionBuilder(e: Double): ExpressionBuilder = {
-    new ExpressionBuilder(e)
-  }
+  implicit def ExpressionToExpressionBuilder(e: Double): ExpressionBuilder = new ExpressionBuilder(e)
 
-  implicit def ExpressionToExpressionBuilder(e: Int): ExpressionBuilder = {
-    new ExpressionBuilder(e)
-  }
-
+  implicit def ExpressionToExpressionBuilder(e: Int): ExpressionBuilder = new ExpressionBuilder(e)
 }
 

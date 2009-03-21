@@ -16,16 +16,26 @@ trait Expression {
   def simplify = new RichExpression(this).simplify
 }
 
-case class Constant(value: Double) extends Expression {
+sealed abstract class BaseExpression extends Expression
+
+case class Constant(value: Double) extends BaseExpression {
   def describe = {
     value.toString;
   }
 }
 
-case class Variable(name: String) extends Expression {
+case class Variable(name: String) extends BaseExpression {
   def describe = {
     name.toString
   }
+}
+
+case class BinaryOp(left: Expression, op: Operator, right: Expression) extends BaseExpression {
+  def describe = left.describe + " " + op.toString + " " + right.describe
+
+  def flip = BinaryOp(right, op, left)
+
+  override def length = left.length + right.length
 }
 
 object Expression {
@@ -34,12 +44,4 @@ object Expression {
   implicit def fromInt(value: Int): Constant = Constant(value)
 
   implicit def fromString(value: String) = Variable(value)
-}
-
-case class BinaryOp(left: Expression, op: Operator, right: Expression) extends Expression {
-  def describe = left.describe + " " + op.toString + " " + right.describe
-
-  def flip = BinaryOp(right, op, left)
-
-  override def length = left.length + right.length
 }
