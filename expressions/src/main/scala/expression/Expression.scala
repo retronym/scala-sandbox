@@ -12,7 +12,7 @@ trait Expression {
 
   def refactor = new RichExpression(this).refactor
 
-  def refactor2Pass = new RichExpression(this).refactor2pass
+  def refactorMultiPass = new RichExpression(this).refactorMultiPass
 
   def simplify = new RichExpression(this).simplify
 }
@@ -91,7 +91,7 @@ class RichExpression(val e: Expression) {
     choices.head
   }
 
-  def refactor2pass = {
+  def refactorMultiPass = {
     var r1 = refactor.removeDuplicates
     var done = false;
     while (!done) {
@@ -111,6 +111,7 @@ class RichExpression(val e: Expression) {
     {case b@BinaryOp(_, o: Commutative, _) => b.flip},
     {case BinaryOp(a, o1: Associative, BinaryOp(b, o2: Associative, c)) if o1 == o2 => BinaryOp(BinaryOp(a, o1, b), o1, c)},
     {case BinaryOp(BinaryOp(a, o1: Associative, b), o2: Associative, c) if o1 == o2 => BinaryOp(a, o1, BinaryOp(b, o1, c))},
+    // TODO Compiler warning because of type param Erasure. Maybe Expression should be Expression[DoubleNumericSystem] instead.
     {case BinaryOp(Constant(i), o: HasIdentity[Double], x) if o.isIdentity(i) => x},
     {case BinaryOp(x, o: HasIdentity[Double], Constant(i)) if o.isIdentity(i) => x},
     {case BinaryOp(x, Multiply(), Constant(0)) => Constant(0)},

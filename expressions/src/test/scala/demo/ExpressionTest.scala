@@ -16,6 +16,7 @@ import _root_.org.specs.collection._
 import _root_.org.specs.util._
 import _root_.org.specs.xml._
 
+// TODO Figure out how to use Specs directly with IntelliJ, rather than JUnit.
 class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testExpressionOk : Unit = {
     val op = BinaryOp(Constant(1), Op.+, Constant(0))
@@ -66,7 +67,7 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testDivide : Unit = {
     val e1 = ("a" +~ "b") /~ "b";
     val value = ("a" /~ "b") +~ 1
-    e1.refactor2Pass must contain(value)
+    e1.refactorMultiPass must contain(value)
   }
 
   def checkSimplify(expected: Expression, original: Expression) {
