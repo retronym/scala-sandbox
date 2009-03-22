@@ -3,7 +3,6 @@ package retronym.expression
 import dsl.ExpressionBuilder._
 import dsl._
 
-import junit.framework.{Test, Assert, TestCase}
 import junit.framework.Assert._
 import _root_.org.specs.runner._
 import _root_.org.specs.matcher._
@@ -14,8 +13,26 @@ import _root_.org.specs.io._
 import _root_.org.specs.collection._
 import _root_.org.specs.util._
 import _root_.org.specs.xml._
+import junit.framework.{TestResult, Test, Assert, TestCase}
+import org.junit.runner.notification.RunNotifier
+import org.junit.runner.{Runner, RunWith, Description}
+import org.junit.runners.Suite
 
-// TODO Figure out how to use Specs directly with IntelliJ, rather than JUnit.
+// TODO This approach is not satisfactory from the IntelliJ JUnit Runner as the individual test are not named
+//      Look into changing the Specs <-> JUnit4 Adapter.
+//@RunWith(classOf[JUnitSuiteRunner])
+//class mySpecJunit4 extends JUnit4(mySpec)
+//
+//object mySpec extends Specification {
+//  "'hello world' has 11 characters" in {
+//    println("hello!")
+//     "hello world".size must_== 11
+//  }
+//  "'hello world' matches 'h.* w.*'" in {
+//     "hello world" must beMatching("h.* w.*")
+//  }
+//}
+
 class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testExpressionOk : Unit = {
     val op = BinaryOp(Constant(1), Plus(), Constant(0))
