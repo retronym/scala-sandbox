@@ -2,6 +2,11 @@ package retronym.expression
 
 import _root_.retronym.commons.BooleanW._
 import _root_.retronym.commons.PartialFunctionW._
+import RichExpression._
+
+object RichExpression {
+  implicit def ExpressionToRichExpression(e : Expression) : RichExpression = new RichExpression(e)
+}
 
 class RichExpression(val e: Expression) {
   def simplify: Expression = {

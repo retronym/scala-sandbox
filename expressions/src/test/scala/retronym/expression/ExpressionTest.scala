@@ -2,8 +2,9 @@ package retronym.expression
 
 import dsl.ExpressionBuilder._
 import dsl._
+import RichExpression._
 
-import junit.framework.Assert._
+import _root_.junit.framework.Assert._
 import _root_.org.specs.runner._
 import _root_.org.specs.matcher._
 import _root_.org.specs.mock._
@@ -13,10 +14,10 @@ import _root_.org.specs.io._
 import _root_.org.specs.collection._
 import _root_.org.specs.util._
 import _root_.org.specs.xml._
-import junit.framework.{TestResult, Test, Assert, TestCase}
-import org.junit.runner.notification.RunNotifier
-import org.junit.runner.{Runner, RunWith, Description}
-import org.junit.runners.Suite
+import _root_.junit.framework.{TestResult, Test, Assert, TestCase}
+import _root_.org.junit.runner.notification.RunNotifier
+import _root_.org.junit.runner.{Runner, RunWith, Description}
+import _root_.org.junit.runners.Suite
 
 // TODO This approach is not satisfactory from the IntelliJ JUnit Runner as the individual test are not named
 //      Look into changing the Specs <-> JUnit4 Adapter.

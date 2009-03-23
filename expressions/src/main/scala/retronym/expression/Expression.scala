@@ -7,13 +7,6 @@ trait Expression {
   def describe: String
 
   def length: Int = 1
-
-  // TODO Remove mutual dependency from Expression <-> RichExpression.
-  def refactor = new RichExpression(this).refactor
-
-  def refactorMultiPass = new RichExpression(this).refactorMultiPass
-
-  def simplify = new RichExpression(this).simplify
 }
 
 sealed abstract class BaseExpression extends Expression
