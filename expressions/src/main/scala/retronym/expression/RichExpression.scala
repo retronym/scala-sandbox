@@ -9,14 +9,9 @@ object RichExpression {
 }
 
 class RichExpression(val e: Expression) {
-  def simplify: Expression = {
-    val choices = refactor.sort(_.length < _.length)
-    choices.head
-  }
+  def simplify: Expression = refactor.sort(_.length < _.length).head
 
-  def refactor : List[Expression] = {
-    refactorMultiPass(List(e))
-  }
+  def refactor : List[Expression] = refactorMultiPass(List(e))
 
   def refactorOnePass: List[Expression] = e match {
     case b: BinaryOp => refactorBinaryOp(b)
