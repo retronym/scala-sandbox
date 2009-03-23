@@ -1,12 +1,14 @@
+package retronym.finance
+
 import java.math.BigDecimal
 import java.util.Date
 import scalaz.OptionW
 
-case class PayoffStyle
-case class Put extends PayoffStyle
-case class Call extends PayoffStyle
+case class PayoffStyle()
+case class Put() extends PayoffStyle
+case class Call() extends PayoffStyle
 
-case class Level
+case class Level()
 
 case class AbsoluteLevel(value: BigDecimal)
 case class PercentLevel(value: BigDecimal)
@@ -16,10 +18,10 @@ trait Underlying {
 }
 
 trait BasketStyle;
-case class WorstOf extends BasketStyle;
-case class BestOf extends BasketStyle;
-case class Average extends BasketStyle;
-case class Single extends BasketStyle;
+case class WorstOf() extends BasketStyle;
+case class BestOf() extends BasketStyle;
+case class Average() extends BasketStyle;
+case class Single() extends BasketStyle;
 
 case class OptionCalendar(forwardStart: OptionW[Date] )
 

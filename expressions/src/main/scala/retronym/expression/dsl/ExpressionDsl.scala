@@ -15,4 +15,3 @@ class ExpressionBuilder(e1: Expression) {
 object ExpressionBuilder {
   implicit def ExpressionToExpressionBuilder[T <% Expression](e: T): ExpressionBuilder = new ExpressionBuilder(e)
 }
-
