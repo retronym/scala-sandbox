@@ -14,24 +14,24 @@ class RichExpression(val e: Expression) {
     choices.head
   }
 
-  def refactorMultiPass : List[Expression] = {
-    refactorMultiPass(refactor.removeDuplicates)
+  def refactor : List[Expression] = {
+    refactorMultiPass(List(e))
+  }
+
+  def refactorOnePass: List[Expression] = e match {
+    case b: BinaryOp => refactorBinaryOp(b)
+    case e => List(e)
   }
 
   private def refactorMultiPass(es : List[Expression]) : List[Expression] = {
-    val es2 = (for (e <- es; e1 <- e.refactor) yield e1).removeDuplicates
+    val es2 = (for (e <- es; e1 <- e.refactorOnePass) yield e1).removeDuplicates
     if (es.length == es2.length) {
       return es2
     }
     refactorMultiPass(es2)
   }
 
-  def refactor: List[Expression] = e match {
-    case b: BinaryOp => refactorBinaryOp(b)
-    case e => List(e)
-  }
-
-  val rules: List[PartialFunction[Expression, Expression]] = List(
+  private val rules: List[PartialFunction[Expression, Expression]] = List(
     {case b@BinaryOp(_, o: Commutative, _) => b.flip},
     {case BinaryOp(a, o1: Associative, BinaryOp(b, o2: Associative, c)) if o1 == o2 => BinaryOp(BinaryOp(a, o1, b), o1, c)},
     {case BinaryOp(BinaryOp(a, o1: Associative, b), o2: Associative, c) if o1 == o2 => BinaryOp(a, o1, BinaryOp(b, o1, c))},
@@ -49,7 +49,7 @@ class RichExpression(val e: Expression) {
 
   private def refactorBinaryOp(e: BinaryOp): List[Expression] = {
     val es = e match {
-      case BinaryOp(l, o, r) => for (l1 <- l.refactor; r1 <- r.refactor) yield BinaryOp(l1, o, r1)
+      case BinaryOp(l, o, r) => for (l1 <- l.refactorOnePass; r1 <- r.refactorOnePass) yield BinaryOp(l1, o, r1)
     }
 
     for (e1 <- es; r <- rules; e2 <- r.toFunction1(e1)) yield e2

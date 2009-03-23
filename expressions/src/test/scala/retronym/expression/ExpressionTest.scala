@@ -76,7 +76,7 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testDivide : Unit = {
     val e1 = ("a" +~ "b") /~ "b";
     val value = ("a" /~ "b") +~ 1
-    e1.refactorMultiPass must contain(value)
+    e1.refactor must contain(value)
   }
 }
 
