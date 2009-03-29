@@ -45,15 +45,12 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
     expr must be_==(BinaryOp(Constant(1), Plus(), Variable("x")))
   }
 
-  def testSimplifiy : Unit = {
+  def testSimplify : Unit = {
     (0 +~ "x").simplify must expr_==("x")
     ("x" +~ 0).simplify must expr_==("x")
     (0 +~ "x").simplify must expr_==("x")
     ("x" *~ 1).simplify must expr_==("x")
     (1 *~ "x").simplify must expr_==("x")
-  }
-
-  def testSimplifiy1 : Unit = {
     ((0 +~ 0) +~ "x").simplify must expr_==("x")
   }
 
@@ -68,7 +65,7 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
     val e1 = ("a" +~ "b") +~ "c";
     val e2 = "a" +~ ("b" +~ "c")
 
-    e1.refactor must contain(e2)
+    e1.refactor must containAll(List[Expression](e1, e2))
     e1.refactor must contain(e1)
     e2.refactor must contain(e1)
   }
@@ -77,11 +74,5 @@ class ExpressionTest extends TestCase("expression") with SpecsMatchers {
     val e1 = ("a" +~ "b") /~ "b";
     val value = ("a" /~ "b") +~ 1
     e1.refactor must contain(value)
-  }
-}
-
-case class expr_==(e: Expression) extends Matcher[Expression] {
-  override def apply(t: =>Expression) = {
-    (e == t, "matched", "expected: " + e.describe)
   }
 }
