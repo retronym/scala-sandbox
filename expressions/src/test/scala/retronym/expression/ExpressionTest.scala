@@ -36,13 +36,13 @@ import _root_.org.junit.runners.Suite
 
 class ExpressionTest extends TestCase("expression") with SpecsMatchers {
   def testExpressionOk : Unit = {
-    val op = BinaryOp(Constant(1), Plus(), Constant(0))
+    val op = BinaryOp(Constant(1), Plus, Constant(0))
     op.describe must be_==("1.0 + 0.0")
   }
 
   def testImplicits : Unit = {
-    val expr = BinaryOp(1, Plus(), "x")
-    expr must be_==(BinaryOp(Constant(1), Plus(), Variable("x")))
+    val expr = BinaryOp(1, Plus, "x")
+    expr must be_==(BinaryOp(Constant(1), Plus, Variable("x")))
   }
 
   def testSimplify : Unit = {

@@ -26,11 +26,11 @@ object ExpressionExternalDSL extends StandardTokenParsers {
 
   def operator: Parser[Operator] = plus | minus | mul | div
 
-  def plus: Parser[Operator] = "+" ^^ {_ => Plus()}
+  def plus: Parser[Operator] = "+" ^^ {_ => Plus}
 
-  def minus: Parser[Operator] = "-" ^^ {_ => Minus()}
+  def minus: Parser[Operator] = "-" ^^ {_ => Minus}
 
-  def mul: Parser[Operator] = "*" ^^ {_ => Multiply()}
+  def mul: Parser[Operator] = "*" ^^ {_ => Multiply}
 
-  def div: Parser[Operator] = "/" ^^ {_ => Div()}
+  def div: Parser[Operator] = "/" ^^ {_ => Div}
 }

@@ -11,16 +11,16 @@ trait HasIdentity[V] {
   def isIdentity(v: V): Boolean
 }
 
-case class Plus() extends Operator("+") with HasIdentity[Double] with Commutative with Associative {
+case object Plus extends Operator("+") with HasIdentity[Double] with Commutative with Associative {
   def isIdentity(v: Double) = v == 0
 }
 
-case class Minus() extends Operator("-") with HasIdentity[Double] {
+case object Minus extends Operator("-") with HasIdentity[Double] {
   def isIdentity(v: Double) = v == 0
 }
 
-case class Multiply() extends Operator("x") with HasIdentity[Double] with Commutative with Associative {
+case object Multiply extends Operator("x") with HasIdentity[Double] with Commutative with Associative {
   def isIdentity(v: Double) = v == 1
 }
 
-case class Div() extends Operator("/")
+case object Div extends Operator("/")

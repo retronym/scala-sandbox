@@ -33,13 +33,13 @@ class RichExpression(val e: Expression) {
     // TODO Compiler warning because of type param Erasure. Maybe Expression should be Expression[DoubleNumericSystem] instead.
     {case BinaryOp(Constant(i), o: HasIdentity[Double], x) if o.isIdentity(i) => x},
     {case BinaryOp(x, o: HasIdentity[Double], Constant(i)) if o.isIdentity(i) => x},
-    {case BinaryOp(x, Multiply(), Constant(0)) => Constant(0)},
-    {case BinaryOp(Constant(0), Multiply(), x) => Constant(0)},
-    {case BinaryOp(Constant(0), Div(), x) => Constant(0)},
-    {case BinaryOp(a, Div(), b) if a == b => Constant(1)},
-    {case BinaryOp(x, Minus(), y) if x == y => Constant(0)},
-    {case BinaryOp(BinaryOp(x, op, y), Div(), z) if op == Minus() || op == Plus() => BinaryOp(new BinaryOp(x, Div(), z), op, new BinaryOp(y, Div(), z))},
-    {case BinaryOp(BinaryOp(a, Div(), b), op, BinaryOp(c, Div(), d)) if b == d => BinaryOp(BinaryOp(a, op, c), Div(), b)},
+    {case BinaryOp(x, Multiply, Constant(0)) => Constant(0)},
+    {case BinaryOp(Constant(0), Multiply, x) => Constant(0)},
+    {case BinaryOp(Constant(0), Div, x) => Constant(0)},
+    {case BinaryOp(a, Div, b) if a == b => Constant(1)},
+    {case BinaryOp(x, Minus, y) if x == y => Constant(0)},
+    {case BinaryOp(BinaryOp(x, op, y), Div, z) if op == Minus || op == Plus => BinaryOp(new BinaryOp(x, Div, z), op, new BinaryOp(y, Div, z))},
+    {case BinaryOp(BinaryOp(a, Div, b), op, BinaryOp(c, Div, d)) if b == d => BinaryOp(BinaryOp(a, op, c), Div, b)},
     {case b => b})
 
   private def refactorBinaryOp(e: BinaryOp): List[Expression] = {
