@@ -27,6 +27,6 @@
         <dependency>
             <groupId>org.specs</groupId>
             <artifactId>specs</artifactId>
-        </dependency>
+        </dependency>        
     </dependencies>
 </project>

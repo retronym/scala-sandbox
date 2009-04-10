@@ -5,8 +5,8 @@ import java.util.Date
 import scalaz.OptionW
 
 case class PayoffStyle()
-case class Put() extends PayoffStyle
-case class Call() extends PayoffStyle
+case object Put extends PayoffStyle
+case object Call extends PayoffStyle
 
 case class Level()
 
@@ -18,12 +18,12 @@ trait Underlying {
 }
 
 trait BasketStyle;
-case class WorstOf() extends BasketStyle;
-case class BestOf() extends BasketStyle;
-case class Average() extends BasketStyle;
-case class Single() extends BasketStyle;
+case object WorstOf extends BasketStyle;
+case object BestOf extends BasketStyle;
+case object Average extends BasketStyle;
+case object Single extends BasketStyle;
 
-case class OptionCalendar(forwardStart: OptionW[Date] )
+case class OptionCalendar(forwardStart: Option[Date])
 
 case class OptionPayoff(
                        strike: Level,
@@ -31,6 +31,15 @@ case class OptionPayoff(
                        basketStyle: BasketStyle
                        )
 
-case class Option(payoff : OptionPayoff,
-                 optionCalendar : OptionCalendar)
+case class OptionInstrument(payoff: OptionPayoff, optionCalendar: OptionCalendar)
+
+trait Instrument
+
+class BasketComponent(val instrument: Instrument, val q: BigDecimal)
+
+class Basket(components: List[BasketComponent]) extends Instrument
+
+trait NamedInstrument {
+  def name;
+}
 
