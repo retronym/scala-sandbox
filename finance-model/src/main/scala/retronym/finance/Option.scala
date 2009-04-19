@@ -2,7 +2,7 @@ package retronym.finance
 
 import java.math.BigDecimal
 import java.util.Date
-import scalaz.OptionW
+import scalaz.control.Monad
 
 case class PayoffStyle()
 case object Put extends PayoffStyle
@@ -25,6 +25,8 @@ case object Single extends BasketStyle;
 
 case class OptionCalendar(forwardStart: Option[Date])
 
+
+
 case class OptionPayoff(
                        strike: Level,
                        style: PayoffStyle,
@@ -37,7 +39,8 @@ trait Instrument
 
 class BasketComponent(val instrument: Instrument, val q: BigDecimal)
 
-class Basket(components: List[BasketComponent]) extends Instrument
+class Basket(components: List[BasketComponent]) extends Instrument {
+}
 
 trait NamedInstrument {
   def name;

@@ -895,6 +895,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-compiler/2.7.3/scala-compiler-2.7.3-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.scala-tools.testing:scalatest:0.9.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalatest/0.9.5/scalatest-0.9.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalatest/0.9.5/scalatest-0.9.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalatest/0.9.5/scalatest-0.9.5-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <UsedPathMacros>
     <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />
