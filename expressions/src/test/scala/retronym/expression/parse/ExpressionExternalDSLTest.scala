@@ -35,7 +35,7 @@ object expressionDslSpec extends Specification {
     parse("(x + 1)") must expr_==("x" +~ 1)
   }
   
-  "ParseLeftToRight" in {
+  "Parse LeftToRight" in {
     // TODO Understand http://cleverlytitled.blogspot.com/2009/04/shunting-yard-algorithm.html to figure out
     // how to avoid the infinite recursion of the current parser.
     //
