@@ -551,24 +551,21 @@
   <component name="ProjectDetails">
     <option name="projectName" value="helloworld" />
   </component>
-  <component name="ProjectFileVersion" converted="true">
-    <converter id="javaee-modules" />
-    <converter id="ror-modules" />
-    <converter id="SelenaRunConfToDiana" />
-  </component>
+  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project:///Users/jason/code/scala-sandbox/scala-sandbox.ipr" />
+    <option name="state" value="project://E:\code\scala-sandbox\scala-sandbox.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/expressions/expressions.iml" filepath="$PROJECT_DIR$/expressions/expressions.iml" />
       <module fileurl="file://$PROJECT_DIR$/finance-model/finance-model.iml" filepath="$PROJECT_DIR$/finance-model/finance-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lessons/lessons.iml" filepath="$PROJECT_DIR$/lessons/lessons.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-sandbox.iml" filepath="$PROJECT_DIR$/scala-sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-interface/web-interface.iml" filepath="$PROJECT_DIR$/web-interface/web-interface.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ResourceManagerContainer">
@@ -584,9 +581,6 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-  </component>
-  <component name="SQLPlugin.ProjectConfiguration">
-    <queries />
   </component>
   <component name="StarteamConfiguration">
     <option name="SERVER" value="" />
@@ -908,7 +902,7 @@
     </library>
   </component>
   <UsedPathMacros>
-    <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />
+    <macro name="MAVEN_REPOSITORY" />
   </UsedPathMacros>
 </project>
 
