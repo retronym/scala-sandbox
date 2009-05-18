@@ -3,12 +3,13 @@ package retronym.lessons.option
 import _root_.org.spex.Specification
 
 
-object Option extends Specification {
+object OptionalValues extends Specification {
   "Java Style" should {
     def add(a: java.lang.Integer, b: java.lang.Integer) : java.lang.Integer = {
       if (a == null || b == null) return null
-      return a + b
+      return a.intValue + b.intValue
     }
+
     "First is null" in {
       add(null, 1) must beNull
     }
@@ -28,16 +29,16 @@ object Option extends Specification {
       for(a <- a; b <- b) yield add(a, b)
     }
     "First is null" in {
-      add(None, Some(1)) must beNone
+      addOptionalInputs(None, Some(1)) must beNone
     }
     "Second is null" in {
-      add(Some(1), None) must beNone
+      addOptionalInputs(Some(1), None) must beNone
     }
     "Both are null" in {
-      add(None, None) must beNone
+      addOptionalInputs(None, None) must beNone
     }
     "Both are non-null" in {
-      add(Some(1), Some(2)) must beSome[Int].which(_ == 3)
+      addOptionalInputs(Some(1), Some(2)) must beSome[Int].which(_ == 3)
     }
   }
 }
