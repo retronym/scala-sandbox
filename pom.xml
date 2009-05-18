@@ -29,6 +29,7 @@
 
     <modules>
         <module>commons</module>
+        <module>lessons</module>
         <module>expressions</module>
         <module>finance-model</module>
         <module>web-interface</module>
@@ -82,10 +83,26 @@
                 <version>3.0</version>
             </dependency>
             <dependency>
-                <groupId>org.specs</groupId>
+                <groupId>org.scala-tools.testing</groupId>
                 <artifactId>specs</artifactId>
-                <version>1.4.3</version>
+                <version>1.5.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.scala-tools.testing</groupId>
+                <artifactId>scalatest</artifactId>
+                <version>0.9.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-tools.testing</groupId>
+                <artifactId>scalacheck</artifactId>
+                <version>1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.7</version>
+            </dependency>
+            
         </dependencies>
     </dependencyManagement>
 
