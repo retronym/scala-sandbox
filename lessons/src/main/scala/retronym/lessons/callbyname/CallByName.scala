@@ -3,7 +3,7 @@ package retronym.lessons.callbyname
 import _root_.org.spex.Specification
 
 /**
- * 4.6.1 The type of a value parameter may be preÞxed by =>, e.g. x : => T . The type of
+ * 4.6.1 The type of a value parameter may be prefixed by =>, e.g. x : => T . The type of
  * such a parameter is then the parameterless method type => T . This indicates that
  * the corresponding argument is not evaluated at the point of function application,
  * but instead is evaluated at each use within the function. That is, the argument is
@@ -28,7 +28,7 @@ object CallByName extends Specification {
 
     def repeat(count: Int, s: => String) = {
       (0 until count).foldLeft("")((b: String, _: Any) => b + s)
-    }
+    }      
 
     "call by name evaluate the parameter lazily and repeatedly" in {
       val mockedStringSource = mock[StringSource]

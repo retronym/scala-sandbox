@@ -6,8 +6,9 @@ import erasure.Erasure
 import control.Control
 import option.OptionalValues
 import org.spex.Specification
+import traits.UsingTraits
 
 object Trail extends Specification {
- "Learning Trail" isSpecifiedBy(testing.specs.Sample, Control, CallByName, Erasure, OptionalValues)
+ "Learning Trail" isSpecifiedBy(testing.specs.Sample, Control, UsingTraits, CallByName, Erasure, OptionalValues)
 }
 
