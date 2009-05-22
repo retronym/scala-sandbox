@@ -39,6 +39,12 @@
     </build>
     <dependencies>
         <dependency>
+            <groupId>retronym</groupId>
+            <artifactId>lessons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
         </dependency>

@@ -551,9 +551,13 @@
   <component name="ProjectDetails">
     <option name="projectName" value="helloworld" />
   </component>
-  <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectFileVersion" converted="true">
+    <converter id="javaee-modules" />
+    <converter id="ror-modules" />
+    <converter id="SelenaRunConfToDiana" />
+  </component>
   <component name="ProjectKey">
-    <option name="state" value="project://E:\code\scala-sandbox\scala-sandbox.ipr" />
+    <option name="state" value="project:///Users/jason/code/scala-sandbox/scala-sandbox.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -565,7 +569,7 @@
       <module fileurl="file://$PROJECT_DIR$/web-interface/web-interface.iml" filepath="$PROJECT_DIR$/web-interface/web-interface.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ResourceManagerContainer">
@@ -581,6 +585,9 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
+  </component>
+  <component name="SQLPlugin.ProjectConfiguration">
+    <queries />
   </component>
   <component name="StarteamConfiguration">
     <option name="SERVER" value="" />
@@ -834,17 +841,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.4/junit-4.4-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.specs:specs:1.4.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/specs/specs/1.4.3/specs-1.4.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/specs/specs/1.4.3/specs-1.4.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/specs/specs/1.4.3/specs-1.4.3-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.mortbay.jetty:jetty:6.1.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty/6.1.6/jetty-6.1.6.jar!/" />
@@ -900,9 +896,43 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalatest/0.9.5/scalatest-0.9.5-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.scala-tools.testing:specs:1.5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/specs/1.5.0/specs-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/specs/1.5.0/specs-1.5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/specs/1.5.0/specs-1.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.scala-tools.testing:scalacheck:1.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalacheck/1.5/scalacheck-1.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalacheck/1.5/scalacheck-1.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/scala-tools/testing/scalacheck/1.5/scalacheck-1.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mockito:mockito-all:1.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-all/1.7/mockito-all-1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-all/1.7/mockito-all-1.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-all/1.7/mockito-all-1.7-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <UsedPathMacros>
-    <macro name="MAVEN_REPOSITORY" />
+    <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />
+    <macro name="TEMPLATE" description="" />
   </UsedPathMacros>
 </project>
 

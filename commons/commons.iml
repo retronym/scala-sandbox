@@ -21,7 +21,7 @@
     <orderEntry type="library" exported="" name="Maven: org.scala-lang:scala-library:2.7.3" level="project" />
     <orderEntry type="library" exported="" name="Maven: com.workingmouse:scalaz:3.0" level="project" />
     <orderEntry type="library" exported="" name="Maven: junit:junit:4.4" level="project" />
-    <orderEntry type="library" exported="" name="Maven: org.specs:specs:1.4.3" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.scala-tools.testing:specs:1.5.0" level="project" />
   </component>
 </module>
 

@@ -22,18 +22,20 @@ import _root_.retronym.expression.dsl.ExpressionBuilder._
 import _root_.retronym.expression.RichExpression._
 import ExpressionExternalDSL.parse
 
-class ExpressionExternalDSLTest extends TestCase("expression external dsl") with SpecsMatchers {
-  def testParse() : Unit = {
+class expressionDslSpecAdapter extends ScalaTestSuite(expressionDslSpec)
+
+object expressionDslSpec extends Specification {
+  "Parse" in {
     parse("0") must expr_==(0)
     parse("x") must expr_==("x")
     parse("(0 + 1)") must expr_==(0 +~ 1)
     parse("(x + 1)") must expr_==("x" +~ 1)
     parse("(x + (x - 1))") must expr_==("x" +~ ("x" -~ 1))
 
-    parse("x + 1") must expr_==("x" +~ 1)
+    parse("(x + 1)") must expr_==("x" +~ 1)
   }
   
-  def testParseLeftToRight : Unit = {
+  "Parse LeftToRight" in {
     // TODO Understand http://cleverlytitled.blogspot.com/2009/04/shunting-yard-algorithm.html to figure out
     // how to avoid the infinite recursion of the current parser.
     //

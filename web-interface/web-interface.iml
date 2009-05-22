@@ -17,7 +17,31 @@
           <setting name="EXCLUDE_EXPLODED_DIRECTORY" value="true" />
         </building>
         <packaging>
+          <containerElement type="module" name="lessons">
+            <attribute name="method" value="5" />
+            <attribute name="URI" value="/WEB-INF/lib/lessons-1.0-SNAPSHOT.jar" />
+          </containerElement>
           <containerElement type="library" name="Maven: org.scala-lang:scala-library:2.7.3" level="project">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/" />
+          </containerElement>
+          <containerElement type="library" name="Maven: com.workingmouse:scalaz:3.0" level="project">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/" />
+          </containerElement>
+          <containerElement type="library" name="Maven: org.scala-tools.testing:specs:1.5.0" level="project">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/" />
+          </containerElement>
+          <containerElement type="library" name="Maven: org.scala-tools.testing:scalatest:0.9.5" level="project">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/" />
+          </containerElement>
+          <containerElement type="library" name="Maven: org.scala-tools.testing:scalacheck:1.5" level="project">
+            <attribute name="method" value="1" />
+            <attribute name="URI" value="/WEB-INF/lib/" />
+          </containerElement>
+          <containerElement type="library" name="Maven: org.mockito:mockito-all:1.7" level="project">
             <attribute name="method" value="1" />
             <attribute name="URI" value="/WEB-INF/lib/" />
           </containerElement>
@@ -96,7 +120,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="lessons" exported="" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.7.3" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.scala-lang:scala-library:2.7.3" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.workingmouse:scalaz:3.0" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.4" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.scala-tools.testing:specs:1.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.scala-tools.testing:scalatest:0.9.5" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.scala-tools.testing:scalacheck:1.5" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.mockito:mockito-all:1.7" level="project" />
     <orderEntry type="library" exported="" name="Maven: net.liftweb:lift-util:0.10" level="project" />
     <orderEntry type="library" exported="" name="Maven: log4j:log4j:1.2.12" level="project" />
     <orderEntry type="library" exported="" name="Maven: javax.mail:mail:1.4" level="project" />
@@ -109,11 +141,9 @@
     <orderEntry type="library" exported="" name="Maven: net.liftweb:lift-webkit:0.10" level="project" />
     <orderEntry type="library" exported="" name="Maven: net.liftweb:lift-mapper:0.10" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:4.4" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api-2.5:6.1.6" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.7.3" level="project" />
   </component>
 </module>
 

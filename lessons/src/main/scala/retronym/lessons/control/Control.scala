@@ -12,8 +12,6 @@ import _root_.org.specs.collection._
 import _root_.org.specs.util._
 import _root_.org.specs.xml._
 
-class controlAdapter extends ScalaTestSuite(Control)
-
 object Control extends Specification {
   "Basic if/else" should {
     "basic if statement" in {
