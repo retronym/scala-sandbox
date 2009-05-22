@@ -24,7 +24,7 @@ object Annotation extends Specification {
   // https://lampsvn.epfl.ch/trac/scala/ticket/1846
   "An annotated var" should {
     "have an annotated field" in {
-      val field: Field = classOf[MyClass].getDeclaredField("myVal")
+      val field = classOf[MyClass].getDeclaredField("myVal")
       val annotation: Deprecated = field.getAnnotation(classOf[Deprecated])
       annotation mustNot beNull
     }
