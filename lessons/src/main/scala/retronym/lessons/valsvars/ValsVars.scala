@@ -12,8 +12,6 @@ import _root_.org.specs.collection._
 import _root_.org.specs.util._
 import _root_.org.specs.xml._
 
-class ValsVarsAdapter extends ScalaTestSuite(ValsVars)
-
 object ValsVars extends Specification {
   "var" should {
     "can be reassigned" in {

@@ -14,8 +14,6 @@ import _root_.org.specs.xml._
 import java.lang.reflect.Field
 import java.lang.reflect.Method
 
-class AnnotationAdapter extends ScalaTestSuite(Annotation)
-
 object Annotation extends Specification {
   class MyClass {
     @Deprecated
