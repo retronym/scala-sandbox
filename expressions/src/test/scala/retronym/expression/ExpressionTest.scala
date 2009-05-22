@@ -4,19 +4,7 @@ import dsl.ExpressionBuilder._
 import dsl._
 import RichExpression._
 
-import _root_.junit.framework.Assert._
-import _root_.org.specs.runner._
-import _root_.org.specs.matcher._
-import _root_.org.specs.mock._
-import _root_.org.specs.specification._
-import _root_.org.specs._
-import _root_.org.specs.io._
-import _root_.org.specs.collection._
-import _root_.org.specs.util._
-import _root_.org.specs.xml._
-import org.specs.runner.ScalaTestSuite
-
-class expressionSpecAdapter extends ScalaTestSuite(expressionSpec)
+import _root_.org.spex.Specification
 
 object expressionSpec extends Specification {
   "describe" in {
